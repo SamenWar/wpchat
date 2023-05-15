@@ -1,0 +1,28 @@
+
+.cell-with-grid-row {
+    grid-row: span 2;
+}
+.td {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%; /* это сделает фото круглым */
+    object-fit: cover;
+}
+
+.button {
+    background-color: #C6C9F8; /* это установит фон кнопки */
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}

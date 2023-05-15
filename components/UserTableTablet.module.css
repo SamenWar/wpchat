@@ -1,0 +1,17 @@
+.user-table {
+    border-collapse: collapse;
+    margin: 40px auto;
+    width: 70%;
+}
+
+.user-cell {
+    border: 1px solid black;
+    text-align: center;
+}
+
+.user-photo {
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+}
