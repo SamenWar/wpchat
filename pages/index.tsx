@@ -18,7 +18,7 @@ export async function getStaticProps() {
     let data = {};
 
     try {
-        const response = await axios.get('http://wordchat/wordpress/wp-json/acf/v3/pages/15');
+        const response = await axios.get('http://bottff.zzz.com.ua/wp-json/acf/v3/pages/12');
         data = response.data;
         console.log(data)
     } catch (error) {
