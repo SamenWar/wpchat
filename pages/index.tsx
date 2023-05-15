@@ -4,10 +4,18 @@ import Header from '../components/header';
 import Content from '../components/Content';
 import Video from '../components/Vidio';
 import Footer from "../components/footer";
+import { UserTableProps } from '../components/UserTypes'; // Import UserTableProps
+
+// Define a new interface for HomeProps
+interface HomeProps {
+    data: {
+        acf: UserTableProps;
+        // Other properties of data if they exist...
+    };
+}
 
 export async function getStaticProps() {
     let data = {};
-
 
     try {
         const response = await axios.get('http://wordchat/wordpress/wp-json/acf/v3/pages/15');
@@ -25,9 +33,9 @@ export async function getStaticProps() {
     };
 }
 
-export default function Home({ data }) {
+// Add the HomeProps type to the Home function
+export default function Home({ data }: HomeProps) {
     // The data is logged in the browser console
-
 
     return (
         <>

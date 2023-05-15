@@ -1,17 +1,18 @@
 import React from 'react';
 import styles from './UserTableTablet.module.css';
+import { UserTableProps } from './UserTypes';
 
-const UserTableTablet = ({ users }) => {
+const UserTableTablet: React.FC<UserTableProps> = ({ users }) => {
     return (
         <>
             {users.map((user, index) => (
                 <table key={index} className={styles['user-table']}>
                     <tbody>
                     <tr>
-                        <td rowSpan="2" className={styles['user-cell']}>
+                        <td rowSpan={2} className={styles['user-cell-photo']}>
                             <img src={user.photo.url} alt={user.photo.title} className={styles['user-photo']} />
                         </td>
-                        <td colSpan="2" rowSpan="2" className={styles['user-cell']}>
+                        <td colSpan={2} rowSpan={2} className={styles['user-cell']}>
                             {user.name}
                         </td>
                     </tr>
@@ -31,7 +32,7 @@ const UserTableTablet = ({ users }) => {
                         </td>
                     </tr>
                     <tr>
-                        <td colSpan="3" className={styles['user-cell']}>
+                        <td colSpan={3} className={styles['user-cell']}>
                             {user.registration}
                         </td>
                     </tr>

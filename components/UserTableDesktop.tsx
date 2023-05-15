@@ -1,10 +1,13 @@
 import React from 'react';
 import styles from './UserTableDesktop.module.css';
 
-const UserTableDesktop = ({ users }) => {
+import { UserTableProps } from './UserTypes';
+
+const UserTableDesktop: React.FC<UserTableProps> = ({ users }) => {
     return (
-        <table>
-            <thead>
+        <table style={{ margin: '30px auto' }}>
+
+        <thead>
             <tr>
                 {Object.keys(users[0]).map((key) => {
                     return <th key={key}>{key}</th>;

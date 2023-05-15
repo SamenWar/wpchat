@@ -1,12 +1,16 @@
 import React from 'react';
 
-const Video = ({ videoId }) => {
+interface VideoProps {
+    videoId: string;
+}
+
+const Video: React.FC<VideoProps> = ({ videoId }) => {
     return (
         <div className="content">
             <iframe
                 src={`https://www.youtube.com/embed/${videoId}`}
-                frameborder="0"
-                allowFullscreen>
+                frameBorder="0"
+                allowFullScreen>
             </iframe>
         </div>
     );

@@ -1,10 +1,11 @@
-import { useEffect, useState } from 'react';
+import { useState, useEffect } from 'react';
 import UserTableDesktop from './UserTableDesktop';
-import UserTableTablet from './UserTableTablet';
 import UserTableMobile from './UserTableMobile';
+import UserTableTablet from "./UserTableTablet";
+import { UserTableProps } from './UserTypes'; // замените на правильный путь
 
-const ResponsiveUserTable = ({ users }) => {
-    const [windowWidth, setWindowWidth] = useState(null);
+const ResponsiveUserTable: React.FC<UserTableProps> = ({ users }) => {
+    const [windowWidth, setWindowWidth] = useState<number | null>(null);
 
     useEffect(() => {
         if (typeof window !== "undefined") {
@@ -16,16 +17,20 @@ const ResponsiveUserTable = ({ users }) => {
     }, []);
 
     if (windowWidth === null) {
-        return null; // или можете вернуть загрузочный индикатор
+        return null;
     }
 
-    if (windowWidth >= 1224) {
-        return <UserTableDesktop users={users} />;
-    } else if (windowWidth >= 768) {
-        return <UserTableTablet users={users} />;
-    } else {
-        return <UserTableMobile users={users} />;
-    }
+    return (
+        <>
+            {windowWidth > 1024 ? (
+                <UserTableDesktop users={users} />
+            ) : windowWidth > 720 ? (
+                <UserTableTablet users={users} />
+            ) : (
+                <UserTableMobile users={users} />
+            )}
+        </>
+    );
 };
 
 export default ResponsiveUserTable;
