@@ -8,9 +8,11 @@ import Footer from "../components/footer";
 export async function getStaticProps() {
     let data = {};
 
+
     try {
-        const response = await axios.get('http://bottff.zzz.com.ua/wp-json/acf/v3/posts/12');
+        const response = await axios.get('http://wordchat/wordpress/wp-json/acf/v3/pages/15');
         data = response.data;
+        console.log(data)
     } catch (error) {
         console.error('Ошибка при выполнении запроса:', error);
     }
