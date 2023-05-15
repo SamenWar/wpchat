@@ -3,7 +3,7 @@ import React from 'react';
 
 // Определение типов для пропсов
 interface ContentProps {
-    title: string;
+    title: any;
     text: string;
     link: string;
 }
